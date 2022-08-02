@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações Pessoais</title>
+</head>
+<body>
+    <style>
+        form{
+            margin: 0px auto;
+            width: 50%;
+        }
+        fieldset{
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        label{
+            width: 70px;
+            display: inline-block;
+        }
+        button{
+            margin-top: 15px;
+        }
+    </style>
+    <h1><b>Informações Pessoais</b></h1>
+    <form onsubmit="showName()">
+        <fieldset>
+            <legend>Cadastro de Cliente</legend>
+            <label for="nomeField">Nome:</label>
+            <input type="text" name="nomeField" id="nomeField" size="60" required>
+            <br><br>Sexo:
+            <label for="sexoMas">Masculino</label>
+            <input type="radio" name="sexo" id="sexoMas">
+            <label for="sexoFem">Feminino</label>
+            <input type="radio" name="sexo" id="sexoFem"><br><br>
+            <label for="idadeField">Idade:</label>
+            <input type="text" name="idadeField" id="idadeField" size="5"><br><br>
+            <label for="enderecoField">Endereço:</label>
+            <input type="text" name="enderecoField" placeholder="Digite o endereço" id="enderecoField"size="70"><br><br>
+            <label for="cidadeField">Cidade:</label>
+            <input type="text" name="cidadeField" placeholder="Digite a cidade" id="cidadeField"size="20"><br><br>
+            <label for="UF">Estado:</label>
+            <select name="UF" id="UF">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select><br><br>
+            <label for="cepField">CEP:</label>
+            <input type="text" name="cepField" id="cepField" placeholder="XXXXX-XXX" pattern="[0-9]{5}-[0-9]{3}" size="10"><br><br>
+            <label for="telResField">Tel/Res:</label>
+            <input type="tel" name="telResField" id="telResField" placeholder="(99) 99999-9999" size="15"><br><br>
+            <label for="telCelField">Tel/Cel:</label>
+            <input type="tel" name="telCelField" id="telCelField" placeholder="(99) 99999-9999" size="15"><br><br>
+            <label for="emailField">Email:</label>
+            <input type="email" name="emailField" id="emailField" placeholder="Digite um endereço de email" size="60"><br><br>    
+        </fieldset>
+        <div>
+            <input type="submit" value="Incluir"></input>
+        </div>
+    </form>
+    <script>
+        function showName() {
+            var name = document.getElementById('nomeField').value
+            alert(name)
+        }
+    </script>
+</body>
+</html>
