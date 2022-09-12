@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px 10%;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 10px #cbcbce;
+            background: #fff;
+            color: white;
+        }
+        
+        body{
+            display: grid;
+            grid-template-columns: repeat(4,25%);
+        }
+        div{
+            background-color: #0000fe;
+            border-radius: 20px;
+        }
+        .d8{
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .d15{
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 6;
+        }
+        .d16{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">num</div>
+    <div class="d2">/</div>
+    <div class="d3">*</div>
+    <div class="d4">-</div>
+    <div class="d5">7</div>
+    <div class="d6">8</div>
+    <div class="d7">9</div>
+    <div class="d8">+</div>
+    <div class="d9">4</div>
+    <div class="d10">5</div>
+    <div class="d11">6</div>
+    <div class="d12">1</div>
+    <div class="d13">2</div>
+    <div class="d14">3</div>
+    <div class="d15">enter</div>
+    <div class="d16">0</div>
+    <div class="d17">del</div>
+</body>
+
+</html>
