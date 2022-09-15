@@ -1,0 +1,43 @@
+.populares__info {
+  border-bottom: solid 1px gainsboro;
+  margin-top: 20px;
+}
+
+
+.populares__cabecalho {
+  display: flex;
+  justify-content: space-between;
+}
+.populares__botao {
+  border: unset;
+}
+.populares__conteudo {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  overflow: hidden;
+  column-gap: 10px;
+  margin: 15px 0px;
+}
+.populares__card___imagem {
+    width: 100%;
+    object-fit: cover;
+}
+.populares__card {
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.populares__card___titulo {
+  font-size: 20px;
+}
+.populares__card___data {
+  font-size: 13px;
+  color: gray;
+}
+.populares__card___corpo {
+  padding: 10px 15px;
+}
+.populares__card___descricao {
+  margin-top: 10px;
+  text-align: justify;
+}

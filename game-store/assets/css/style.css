@@ -1,0 +1,26 @@
+.app {
+  background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 25px;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.conteudo {
+  margin-top: 10px;
+}
+
+.rodape {
+  text-align: center;
+  margin: 15px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
