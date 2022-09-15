@@ -1,4 +1,4 @@
-@media (min-width: 500px) {
+@media (min-width: 950px) {
     .destaques__principal {
       grid-row-start: 1;
       grid-row-end: 3;
@@ -30,7 +30,7 @@
       grid-column-end: 3;
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 950px) {
     .destaques {
       grid-template-columns: auto;
       grid-template-rows: repeat(2, 250px);
@@ -41,7 +41,7 @@
   }
 
   
-@media (max-width: 500px) {
+@media (max-width: 950px) {
     .populares__conteudo{
       grid-template-columns: repeat(1, auto);
       grid-template-rows: repeat(5, auto);
