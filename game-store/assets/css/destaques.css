@@ -8,7 +8,7 @@
 
 
 .destaques__principal {
-  background-image: url(/game-store/assets/img/fortnite.jpg);
+  background-image: url(../img/fortnite.jpg);
   background-size: cover;
   background-position: top;
 }
@@ -23,7 +23,7 @@
 .destaques__secundario_02 {
 
   background-color: aqua;
-  background-image: url(/game-store/assets/img/slack.png);
+  background-image: url(../img/slack.png);
   background-size: cover;
   background-position: center;
 }
@@ -31,14 +31,14 @@
 .destaques__secundario_03 {
 
   background-color: mediumseagreen;
-  background-image: url(/game-store/assets/img/whatsapp.png);
+  background-image: url(../img/whatsapp.png);
   background-size: cover;
   background-position: center;
 }
 
 .destaques__secundario_04 {
   background-color: dimgrey;
-  background-image: url(/game-store/assets/img/cs-go.jpg);
+  background-image: url(../img/cs-go.jpg);
   background-size: cover;
   background-position: center;
 }
