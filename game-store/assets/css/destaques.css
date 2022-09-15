@@ -15,7 +15,7 @@
 
 .destaques__secundario_01 {
   background-color: yellow;
-  background-image: url(/game-store/assets/img/pubg.jpg);
+  background-image: url(../img/pubg.jpg);
   background-size: cover;
   background-position: center;
 }
