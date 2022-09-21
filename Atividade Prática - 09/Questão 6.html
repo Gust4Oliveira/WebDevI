@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 06</title>
+</head>
+<body>
+    <script>
+        const total = Number(prompt("Numero total de eleitores:"))
+        const branco = Number(prompt("Numero de votos em branco:"))
+        const nulos = Number(prompt("Numero de votos nulos:"))        
+        const validos = total - branco - nulos
+
+        alert(`percentual de votos em branco : ${((branco/total)*100).toFixed(2)}% \n\n percentual de votos nulos : ${((nulos/total)*100).toFixed(2)}% \n\n percentual de votos válidos : ${((validos/total)*100).toFixed(2)}%`)
+    </script>
+</body>
+</html>
+</html>
+
