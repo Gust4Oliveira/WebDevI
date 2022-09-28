@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+</head>
+<body>
+    <script>
+        function question2(investingType,investingCash) {
+            
+            if (investingType==1) {
+                newValue = (investingCash+investingCash*0.05).toFixed(2)    
+            }else if(investingType==2){
+                newValue = (investingCash+investingCash*0.10).toFixed(2)
+            }
+            alert(`Valor investido: R$ ${investingCash}\nValor corrigido: R$ ${newValue}`)
+        }
+        
+        investingType = Number(prompt("Escolha uma das opções disponíveis:\nTipo - 1 Poupança - 5%\nTipo - 2 Fundo de renda fixa - 10%"))
+        investingCash = Number(prompt("Insira o valor a ser investido R$:"))
+
+        question2(investingType=investingType,investingCash=investingCash)
+    </script>
+</body>
+</html>
