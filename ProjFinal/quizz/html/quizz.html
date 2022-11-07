@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="pt">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords"
+    content="Bem vindo, Tudo sobre​​ Fakenews, Estatísticas das eleições, 118.552.353, 60.345.999, 58.206.354">
+  <meta name="description" content="">
+  <title>Quiz - Jornal Now</title>
+  <link rel="stylesheet" href="/nicepage.css" media="screen">
+  <link rel="stylesheet" href="/Página-Inicial.css" media="screen">
+  <script class="u-script" type="text/javascript" src="/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="/nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 4.21.5, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/default-logo.png"
+}</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Site de Notícias">
+  <meta property="og:type" content="website">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+
+  body {
+    font-family: 'Montserrat', serif;
+
+  }
+
+  main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    /* background-color: black; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .game-quiz-container {
+    width: 40rem;
+    height: 40rem;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+  }
+
+  .game-details-container {
+    width: 80%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .game-details-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .game-question-container {
+    width: 80%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid darkgray;
+    border-radius: 25px;
+  }
+
+  .game-question-container h1 {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 3px;
+  }
+
+  .game-options-container {
+    width: 80%;
+    min-height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .game-options-container span {
+    width: 45%;
+    /* height: 3rem; */
+    /* margin: 10px; */
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  span label {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: 600;
+    color: rgb(22, 22, 22);
+  }
+
+  span label:hover {
+    -ms-transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+    color: white;
+  }
+
+  input[type="radio"] {
+    position: relative;
+    display: none;
+  }
+
+
+  input[type=radio]:checked~.option {
+    background: paleturquoise;
+  }
+
+  .next-button-container {
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .next-button-container button {
+    width: 8rem;
+    height: 4rem;
+    border-radius: 10px;
+    background: none;
+    color: rgb(25, 25, 25);
+    font-weight: 600;
+    border: 2px solid gray;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .next-button-container button:hover {
+    background-color: rgb(143, 93, 93);
+  }
+
+  .modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  .modal-content-container {
+    /* height: 20rem; */
+    width: 25rem;
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+  }
+
+  .modal-content-container h1 {
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+  }
+
+  .grade-details {
+    width: 15rem;
+    /* height: 10rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .grade-details p {
+    color: white;
+    text-align: center;
+  }
+
+  .modal-button-container {
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-button-container button {
+    width: 10rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: 1px solid rgb(252, 242, 241);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .modal-button-container button:hover {
+    background-color: rgb(83, 82, 82);
+  }
+
+  @media(min-width : 300px) and (max-width : 350px) {
+    .game-quiz-container {
+      width: 90%;
+      height: 80vh;
+    }
+
+    .game-details-container h1 {
+      font-size: 0.8rem;
+    }
+
+    .game-question-container {
+      height: 6rem;
+    }
+
+    .game-question-container h1 {
+      font-size: 0.9rem;
+    }
+
+    .game-options-container span {
+      width: 90%;
+      height: 2.5rem;
+    }
+
+    .game-options-container span label {
+      font-size: 0.8rem;
+    }
+
+    .modal-content-container {
+      width: 90%;
+      height: 25rem;
+    }
+
+    .modal-content-container h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media(min-width : 350px) and (max-width : 700px) {
+    .game-quiz-container {
+      width: 90%;
+      height: 80vh;
+    }
+
+    .game-details-container h1 {
+      font-size: 1rem;
+    }
+
+    .game-question-container {
+      height: 8rem;
+    }
+
+    .game-question-container h1 {
+      font-size: 0.9rem;
+    }
+
+    .game-options-container span {
+      width: 90%;
+    }
+
+    .modal-content-container {
+      width: 90%;
+      height: 25rem;
+    }
+
+    .modal-content-container h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<body class="u-body u-xl-mode" onload="NextQuestion(0)">
+  <header class="u-clearfix u-header u-header" id="sec-6beb">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a class="">
+        <p style="font-size: 25px; color: #478ac9; margin-bottom: 0;">Jornal Now</p>
+      </a>
+      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="quizz/html/quizz.html" style="padding: 10px 18px;">Quiz</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#fake"
+                style="padding: 10px 18px;">Fakenews</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="#estati" style="padding: 10px 22px 10px 18px;">Estatísticas</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- creating a modal for when quiz ends -->
+    <div class="modal-container" id="score-modal">
+
+      <div class="modal-content-container">
+
+        <h1>Parabéns, quiz finalizado.</h1>
+
+        <div class="grade-details">
+          <p>Tentativas : 6</p>
+          <p>Respostas erradas : <span id="wrong-answers"></span></p>
+          <p>Respostas certas : <span id="right-answers"></span></p>
+          <p>Resultado : <span id="grade-percentage"></span>%</p>
+          <p><span id="remarks"></span></p>
+        </div>
+
+        <div class="modal-button-container">
+          <button onclick="closeScoreModal()">Continuar</button>
+        </div>
+
+      </div>
+    </div>
+    <!-- end of modal of quiz details-->
+
+    <div class="game-quiz-container">
+
+      <div class="game-details-container">
+        <h1>Score : <span id="player-score"></span> / 6</h1>
+        <h1>Question : <span id="question-number"></span> / 6</h1>
+      </div>
+
+      <div class="game-question-container">
+        <h1 id="display-question"></h1>
+      </div>
+
+      <div class="game-options-container">
+
+        <div class="modal-container" id="option-modal">
+
+          <div class="modal-content-container">
+            <h1>Por favor escolha uma opção</h1>
+
+            <div class="modal-button-container">
+              <button onclick="closeOptionModal()">Continuar</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <span>
+          <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+          <label for="option-one" class="option" id="option-one-label"></label>
+        </span>
+        <span>
+          <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+          <label for="option-two" class="option" id="option-two-label"></label>
+        </span>
+        <span>
+          <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+          <label for="option-three" class="option" id="option-three-label"></label>
+        </span>
+        <span>
+          <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+          <label for="option-four" class="option" id="option-four-label"></label>
+        </span>
+      </div>
+
+      <div class="next-button-container">
+        <button onclick="handleNextQuestion()">Próxima pergunta</button>
+      </div>
+
+    </div>
+  </main>
+  <script src="/quizz/js/quizz.js" ></script>
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3223">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Desenvolvido para meios acadêmicos</p>
+    </div>
+  </footer>
+</body>
+
+</html>
